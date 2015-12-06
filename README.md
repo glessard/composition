@@ -13,7 +13,7 @@ It is defined as follows:
 ```
 infix operator • { associativity left precedence 90}
 
-func • <A,B,C> (functionA: A -> B, functionB: B -> C) -> A -> C
+public func • <A,B,C> (functionA: A -> B, functionB: B -> C) -> A -> C
 {
   return { functionB(functionA($0)) }
 }
