@@ -5,14 +5,20 @@
 //  Copyright © 2015 Guillaume Lessard. All rights reserved.
 //
 
-infix operator • { associativity left precedence 90}
+precedencegroup CompositionPrecedence {
+  higherThan: TernaryPrecedence
+  associativity: left
+  assignment: false
+}
 
-public func • <A,B> (operand: A, transform: A -> B) -> B
+infix operator • : CompositionPrecedence
+
+public func • <A,B> (operand: A, transform: @escaping (A) -> B) -> B
 {
   return transform(operand)
 }
 
-public func • <A,B,C> (functionA: A -> B, functionB: B -> C) -> A -> C
+public func • <A,B,C> (functionA: @escaping (A) -> B, functionB: @escaping (B) -> C) -> (A) -> C
 {
   return { functionB(functionA($0)) }
 }

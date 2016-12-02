@@ -11,9 +11,7 @@ This package defines •, which is typable on most macs (option-8).
 
 It is defined as follows:
 ```
-infix operator • { associativity left precedence 90}
-
-public func • <A,B,C> (functionA: A -> B, functionB: B -> C) -> A -> C
+public func • <A,B,C> (functionA: @escaping (A) -> B, functionB: @escaping (B) -> C) -> (A) -> C
 {
   return { functionB(functionA($0)) }
 }
