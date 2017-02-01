@@ -1,4 +1,4 @@
-# Composition
+# Composition  [![Build Status](https://travis-ci.org/glessard/composition.svg?branch=master)](https://travis-ci.org/glessard/composition)
 Function composition operator for Swift
 
 See https://wiki.haskell.org/Function_composition or http://mathworld.wolfram.com/Composition.html
