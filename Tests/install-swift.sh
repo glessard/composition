@@ -27,18 +27,15 @@ then
     cd "${TRAVIS_BUILD_DIR}"
 
     echo ""
-  elif [[ "$TRAVIS_OS_NAME" == "osx" ]]
+  elif [[ "$TRAVIS_OS_NAME" == "osx" && -n "$SNAPSHOT" ]]
   then
-    if [[ -n "$SNAPSHOT" ]]
-    then
-      PLATFORM="xcode"
-      BASENAME="${VERSION}-osx"
+    PLATFORM="xcode"
+    BASENAME="${VERSION}-osx"
 
-      # install swift
-      curl -s -O ${URLBASE}/${PLATFORM}/${VERSION}/${BASENAME}.pkg
-      sudo installer -pkg ${BASENAME}.pkg -target /
-      export TOOLCHAINS=swift
-    fi
+    # install swift
+    curl -s -O ${URLBASE}/${PLATFORM}/${VERSION}/${BASENAME}.pkg
+    sudo installer -pkg ${BASENAME}.pkg -target /
+    export TOOLCHAINS=swift
   fi
 else
   if [[ -z $(which swift) ]]
