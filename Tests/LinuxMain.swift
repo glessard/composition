@@ -1,6 +1,8 @@
 import XCTest
-@testable import compositionTests
 
-XCTMain([
-     testCase(compositionTests.allTests),
-])
+import compositionTests
+
+var tests = [XCTestCaseEntry]()
+tests += compositionTests.__allTests()
+
+XCTMain(tests)

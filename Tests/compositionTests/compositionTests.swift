@@ -19,11 +19,4 @@ class compositionTests: XCTestCase
       XCTAssertEqual(s, "1.0")
       XCTAssertEqual(s, f2(f1(1)))
     }
-
-    static var allTests : [(String, (compositionTests) -> () throws -> Void)]
-    {
-        return [
-            ("testExample", testExample),
-        ]
-    }
 }
