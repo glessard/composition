@@ -17,6 +17,7 @@ class compositionTests: XCTestCase
     {
       let s = 1 • f1 • f2
       XCTAssertEqual(s, "1.0")
+      XCTAssertEqual(s, f2(f1(1)))
     }
 
     static var allTests : [(String, (compositionTests) -> () throws -> Void)]
