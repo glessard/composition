@@ -1,5 +1,5 @@
 import XCTest
-@testable import composition
+import composition
 
 private func f1(_ i: Int32) -> Double
 {
