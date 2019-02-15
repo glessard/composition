@@ -33,6 +33,7 @@ fi
 
 for LANGUAGE_VERSION in $VERSIONS
 do
+  echo "" # add a small visual separation
   echo "Testing in compatibility mode for Swift ${LANGUAGE_VERSION}"
   if [[ "${LANGUAGE_VERSION}" = "3" ]]
   then
