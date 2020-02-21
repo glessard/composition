@@ -13,7 +13,7 @@ precedencegroup CompositionPrecedence {
 
 infix operator • : CompositionPrecedence
 
-public func • <A,B> (operand: A, transform: @escaping (A) -> B) -> B
+public func • <A,B> (operand: A, transform: (A) -> B) -> B
 {
   return transform(operand)
 }
